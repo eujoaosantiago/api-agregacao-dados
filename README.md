@@ -297,12 +297,17 @@ Resposta de sucesso:
 }
 ```
 
-Parâmetros:
+Parâmetros de entrada:
 
-| Parâmetro | Onde fica | Obrigatório | Descrição |
-|-----------|-----------|-------------|-----------|
-| sigla_uf | rota | sim | Sigla do estado com 2 letras. |
-| limite | query string | não | Quantidade máxima de cidades retornadas. O padrão é 10 e o máximo é 100. |
+| Parâmetro | Tipo | Obrigatório | Descrição |
+|-----------|------|-------------|-----------|
+| sigla_uf | string | Sim | Sigla do estado (2 caracteres). |
+
+Query parameters opcionais:
+
+| Parâmetro | Tipo | Default | Descrição |
+|-----------|------|---------|-----------|
+| limite | integer | 10 | Quantidade máxima de cidades (1-100). |
 
 Erro quando a UF é inválida:
 
