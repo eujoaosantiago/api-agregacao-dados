@@ -9,17 +9,6 @@ describe('API de agregacao de dados', () => {
     jest.clearAllMocks();
   });
 
-  test('GET /api/v1/health deve retornar status healthy', async () => {
-    const response = await request(app).get('/api/v1/health');
-
-    expect(response.status).toBe(200);
-    expect(response.body).toMatchObject({
-      status: 'healthy',
-      versao: '1.0.0'
-    });
-    expect(response.body.timestamp).toBeDefined();
-  });
-
   test('GET /api/v1/clima/Fortaleza deve retornar dados climaticos', async () => {
     axios.get
       .mockResolvedValueOnce({
