@@ -1,0 +1,105 @@
+{
+  "info": {
+    "name": "API de Agregacao de Dados Climaticos e Geograficos",
+    "description": "Colecao para testar endpoints de health, cidades e clima.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/v1/health",
+          "host": ["{{base_url}}"],
+          "path": ["api", "v1", "health"]
+        }
+      }
+    },
+    {
+      "name": "Clima - Sucesso",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/v1/clima/Fortaleza",
+          "host": ["{{base_url}}"],
+          "path": ["api", "v1", "clima", "Fortaleza"]
+        }
+      }
+    },
+    {
+      "name": "Clima - Nome Invalido",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/v1/clima/X",
+          "host": ["{{base_url}}"],
+          "path": ["api", "v1", "clima", "X"]
+        }
+      }
+    },
+    {
+      "name": "Clima - Cidade Nao Encontrada",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/v1/clima/CidadeInexistente",
+          "host": ["{{base_url}}"],
+          "path": ["api", "v1", "clima", "CidadeInexistente"]
+        }
+      }
+    },
+    {
+      "name": "Cidades - Sucesso",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/v1/cidades/CE?limite=5",
+          "host": ["{{base_url}}"],
+          "path": ["api", "v1", "cidades", "CE"],
+          "query": [
+            {
+              "key": "limite",
+              "value": "5"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Cidades - UF Invalida",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/v1/cidades/ceara",
+          "host": ["{{base_url}}"],
+          "path": ["api", "v1", "cidades", "ceara"]
+        }
+      }
+    },
+    {
+      "name": "Cidades - UF Nao Encontrada",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/v1/cidades/XX",
+          "host": ["{{base_url}}"],
+          "path": ["api", "v1", "cidades", "XX"]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000"
+    }
+  ]
+}
